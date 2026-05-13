@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amtrak Coast Starlight: The Complete 2025 Route Guide — traintravel.guide</title>
+  <meta name="description" content="Everything you need to ride the Coast Starlight: all stops, schedules, tickets, the best seats for ocean views, and what to expect on the overnight journey from LA to Seattle.">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body { padding-top: 56px; }
+
+    /* ── HERO ── */
+    .article-hero { background: var(--ink); position: relative; overflow: hidden; min-height: 480px; display: grid; grid-template-columns: 1fr 1fr; }
+    .article-hero-left { padding: 4rem 3rem 4rem 4rem; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+    .article-hero-right { position: relative; overflow: hidden; }
+    .hero-art { position: absolute; inset: 0; }
+    .breadcrumb { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--gold-light); }
+    .breadcrumb-sep { color: rgba(255,255,255,0.2); }
+    .article-tag { display: inline-block; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: white; background: var(--rail); padding: 3px 10px; margin-bottom: 1.2rem; border-radius: 2px; }
+    .article-hero-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; line-height: 1.1; color: var(--cream); margin-bottom: 1rem; }
+    .article-hero-subtitle { font-size: 1rem; color: rgba(255,255,255,0.55); line-height: 1.6; max-width: 420px; margin-bottom: 2rem; }
+    .article-meta-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .meta-item { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); display: flex; align-items: center; gap: 6px; }
+    .meta-dot { color: var(--rail); font-size: 0.5rem; }
+    .article-hero-left > * { animation: fadeUp 0.8s ease both; }
+    .article-hero-left > *:nth-child(1) { animation-delay: 0s; }
+    .article-hero-left > *:nth-child(2) { animation-delay: 0.08s; }
+    .article-hero-left > *:nth-child(3) { animation-delay: 0.16s; }
+    .article-hero-left > *:nth-child(4) { animation-delay: 0.24s; }
+    .article-hero-left > *:nth-child(5) { animation-delay: 0.32s; }
+
+    /* ── ARTICLE LAYOUT ── */
+    .article-layout { display: grid; grid-template-columns: 1fr min(var(--col-main), 100%) 320px 1fr; align-items: start; padding: 4rem 0; }
+    .article-body { grid-column: 2; padding-right: 3rem; }
+    .article-sidebar { grid-column: 3; position: sticky; top: 80px; }
+
+    /* ── SCENIC SEGMENTS ── */
+    .scenic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cream-dark); margin: 1.5rem 0 2rem; }
+    .scenic-card { background: var(--cream); padding: 1.5rem; }
+    .scenic-card-region { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rail); margin-bottom: 0.5rem; }
+    .scenic-card-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .scenic-card-desc { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 0.75rem; }
+    .scenic-card-timing { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ink-muted); display: flex; align-items: center; gap: 6px; }
+    .scenic-card-timing::before { content: ''; display: block; width: 16px; height: 1px; background: var(--cream-dark); }
+
+    /* ── SEAT SIDE BOX ── */
+    .seat-tip { background: var(--sky); border-radius: 4px; padding: 1.5rem; margin: 2rem 0; display: flex; gap: 1.25rem; align-items: flex-start; }
+    .seat-tip-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .seat-tip-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 5px; }
+    .seat-tip-heading { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 0.4rem; }
+    .seat-tip-body { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+    .seat-tip-body strong { color: white; font-weight: 500; }
+
+    /* ── TICKET COMPARISON ── */
+    .ticket-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--cream-dark); margin: 1.5rem 0 2rem; }
+    .ticket-card { background: var(--cream); padding: 1.5rem; position: relative; }
+    .ticket-card.featured { background: var(--ink); }
+    .ticket-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.5rem; }
+    .ticket-card.featured .ticket-label { color: rgba(255,255,255,0.4); }
+    .ticket-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
+    .ticket-card.featured .ticket-name { color: var(--cream); }
+    .ticket-price { font-family: var(--mono); font-size: 1rem; color: var(--gold); margin-bottom: 1rem; }
+    .ticket-features { list-style: none; padding: 0; margin: 0; }
+    .ticket-features li { font-size: 0.82rem; color: var(--ink-muted); padding: 4px 0; border-bottom: 1px solid var(--cream-dark); display: flex; align-items: flex-start; gap: 7px; line-height: 1.45; }
+    .ticket-card.featured .ticket-features li { color: rgba(255,255,255,0.55); border-bottom-color: rgba(255,255,255,0.08); }
+    .ticket-features li:last-child { border-bottom: none; }
+    .tick { color: var(--forest); font-size: 0.75rem; margin-top: 2px; flex-shrink: 0; }
+    .tick-gold { color: var(--gold); font-size: 0.75rem; margin-top: 2px; flex-shrink: 0; }
+    .featured-badge { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--rail); color: white; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 10px; white-space: nowrap; }
+
+    /* ── STOPS TABLE ── */
+    .stops-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1.5rem 0 2rem; }
+    .stops-table th { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); padding: 0 1rem 0.75rem; text-align: left; border-bottom: 1px solid var(--cream-dark); }
+    .stops-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--cream-dark); color: var(--ink-light); vertical-align: middle; }
+    .stops-table tr:hover td { background: white; }
+    .stop-name { font-weight: 500; color: var(--ink); }
+    .stop-note { font-size: 0.75rem; color: var(--ink-muted); display: block; margin-top: 2px; font-family: var(--mono); letter-spacing: 0.06em; }
+    .highlight-stop td { background: rgba(200,64,42,0.04); }
+    .highlight-stop .stop-name { color: var(--rail); }
+    .scenic-flag { display: inline-block; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(45,74,53,0.1); color: var(--forest); padding: 2px 6px; border-radius: 2px; margin-left: 6px; }
+
+    /* ── TIPS LIST ── */
+    .tips-list { list-style: none; padding: 0; margin: 1rem 0 2rem; }
+    .tips-list li { padding: 0.9rem 0 0.9rem 1.5rem; border-bottom: 1px solid var(--cream-dark); font-size: 1rem; color: var(--ink-light); line-height: 1.65; position: relative; }
+    .tips-list li::before { content: '→'; position: absolute; left: 0; color: var(--rail); font-family: var(--mono); font-size: 0.85rem; top: 0.95rem; }
+    .tips-list li:last-child { border-bottom: none; }
+    .tips-list li strong { color: var(--ink); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+  <div id="progress"><div id="progress-fill"></div></div>
+
+  <!-- HERO -->
+  <header class="article-hero">
+    <div class="article-hero-left">
+      <div class="breadcrumb">
+        <a href="/">traintravel.guide</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/amtrak/">Amtrak</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Coast Starlight</span>
+      </div>
+      <span class="article-tag">Amtrak</span>
+      <h1 class="article-hero-title">Amtrak Coast Starlight: The Complete 2025 Route Guide</h1>
+      <p class="article-hero-subtitle">Los Angeles to Seattle along the Pacific Coast — stops, schedules, tickets, the best seats for ocean views, and what the journey is actually like.</p>
+      <div class="article-meta-row">
+        <span class="meta-item"><span class="meta-dot">●</span> 9 min read</span>
+        <span class="meta-item"><span class="meta-dot">●</span> Updated May 2025</span>
+        <span class="meta-item"><span class="meta-dot">●</span> By Sarah Kendall</span>
+      </div>
+    </div>
+
+    <div class="article-hero-right">
+      <!-- Pacific coast / ocean train illustration -->
+      <div class="hero-art">
+        <svg viewBox="0 0 560 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+          <defs>
+            <linearGradient id="oceanSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0a1628"/>
+              <stop offset="55%" stop-color="#1a3a5f"/>
+              <stop offset="100%" stop-color="#0e2030"/>
+            </linearGradient>
+            <linearGradient id="oceanWater" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1a3a5f"/>
+              <stop offset="100%" stop-color="#0a1a2f"/>
+            </linearGradient>
+            <linearGradient id="coastGlow" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="rgba(200,64,42,0)"/>
+              <stop offset="40%" stop-color="rgba(200,64,42,0.2)"/>
+              <stop offset="100%" stop-color="rgba(200,64,42,0)"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Sky -->
+          <rect width="560" height="480" fill="url(#oceanSky)"/>
+
+          <!-- Stars -->
+          <circle cx="30" cy="25" r="0.8" fill="white" opacity="0.5"/>
+          <circle cx="80" cy="15" r="1" fill="white" opacity="0.4"/>
+          <circle cx="150" cy="35" r="0.8" fill="white" opacity="0.6"/>
+          <circle cx="240" cy="18" r="1" fill="white" opacity="0.35"/>
+          <circle cx="320" cy="28" r="0.8" fill="white" opacity="0.5"/>
+          <circle cx="400" cy="12" r="1" fill="white" opacity="0.4"/>
+          <circle cx="470" cy="32" r="0.8" fill="white" opacity="0.55"/>
+          <circle cx="520" cy="20" r="1" fill="white" opacity="0.3"/>
+          <circle cx="60" cy="55" r="0.7" fill="white" opacity="0.3"/>
+          <circle cx="190" cy="60" r="0.8" fill="white" opacity="0.4"/>
+          <circle cx="440" cy="50" r="0.7" fill="white" opacity="0.3"/>
+
+          <!-- Moon with partial haze -->
+          <circle cx="460" cy="65" r="28" fill="#c8c0b0" opacity="0.75"/>
+          <circle cx="472" cy="59" r="22" fill="#0e1e38" opacity="0.85"/>
+          <!-- Moon reflection on water -->
+          <ellipse cx="460" cy="330" rx="18" ry="50" fill="rgba(200,192,176,0.08)"/>
+
+          <!-- Distant mountains / headlands -->
+          <path d="M0,200 L60,140 L120,175 L180,120 L250,160 L320,110 L400,150 L460,125 L530,155 L560,140 L560,260 L0,260Z" fill="#0a1820" opacity="0.9"/>
+          <path d="M0,240 L80,210 L160,225 L240,205 L320,218 L400,200 L480,215 L560,205 L560,280 L0,280Z" fill="#081420" opacity="0.95"/>
+
+          <!-- Ocean / water -->
+          <rect x="0" y="270" width="560" height="210" fill="url(#oceanWater)"/>
+
+          <!-- Ocean waves (subtle) -->
+          <path d="M0,290 Q40,284 80,290 Q120,296 160,290 Q200,284 240,290 Q280,296 320,290 Q360,284 400,290 Q440,296 480,290 Q520,284 560,290" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
+          <path d="M0,308 Q50,302 100,308 Q150,314 200,308 Q250,302 300,308 Q350,314 400,308 Q450,302 500,308 Q530,314 560,308" stroke="rgba(255,255,255,0.04)" stroke-width="1" fill="none"/>
+          <path d="M0,325 Q60,319 120,325 Q180,331 240,325 Q300,319 360,325 Q420,331 480,325 Q520,319 560,325" stroke="rgba(255,255,255,0.03)" stroke-width="1" fill="none"/>
+
+          <!-- Coastal cliff / embankment -->
+          <path d="M0,265 Q60,258 130,268 Q200,278 280,265 Q350,252 420,262 Q480,272 560,260 L560,310 Q480,300 420,308 Q350,318 280,305 Q200,292 130,308 Q60,322 0,310Z" fill="#0e1e14"/>
+
+          <!-- Rail tracks on cliff edge -->
+          <path d="M0,275 Q140,268 280,272 Q420,276 560,268" stroke="#2a3820" stroke-width="2.5" fill="none"/>
+          <path d="M0,282 Q140,275 280,279 Q420,283 560,275" stroke="#2a3820" stroke-width="2.5" fill="none"/>
+          <!-- Sleepers -->
+          <line x1="20" y1="277" x2="20" y2="284" stroke="#1a2818" stroke-width="3"/>
+          <line x1="65" y1="274" x2="65" y2="281" stroke="#1a2818" stroke-width="2.5"/>
+          <line x1="115" y1="272" x2="115" y2="279" stroke="#1a2818" stroke-width="2.5"/>
+          <line x1="165" y1="271" x2="165" y2="278" stroke="#1a2818" stroke-width="2"/>
+          <line x1="215" y1="271" x2="215" y2="278" stroke="#1a2818" stroke-width="2"/>
+          <line x1="270" y1="271" x2="270" y2="278" stroke="#1a2818" stroke-width="2"/>
+          <line x1="325" y1="271" x2="325" y2="278" stroke="#1a2818" stroke-width="1.5"/>
+          <line x1="380" y1="271" x2="380" y2="278" stroke="#1a2818" stroke-width="1.5"/>
+          <line x1="435" y1="270" x2="435" y2="277" stroke="#1a2818" stroke-width="1.5"/>
+          <line x1="490" y1="269" x2="490" y2="276" stroke="#1a2818" stroke-width="1.5"/>
+          <line x1="540" y1="268" x2="540" y2="275" stroke="#1a2818" stroke-width="1.5"/>
+
+          <!-- Train (Superliner, hugging the coast) -->
+          <!-- Locomotive -->
+          <rect x="18" y="248" width="128" height="28" rx="4" fill="#0e1e10"/>
+          <path d="M18,248 L0,256 L0,276 L18,276Z" fill="#0a180a"/>
+          <!-- Headlight -->
+          <circle cx="2" cy="264" r="4" fill="#ffe896" opacity="0.95"/>
+          <ellipse cx="2" cy="264" rx="14" ry="7" fill="rgba(255,232,150,0.15)"/>
+          <!-- Light on ocean surface -->
+          <ellipse cx="40" cy="300" rx="30" ry="8" fill="rgba(255,232,150,0.06)"/>
+          <!-- Amtrak stripe -->
+          <rect x="0" y="273" width="148" height="3" fill="#c8402a"/>
+          <!-- Loco windows -->
+          <rect x="28" y="253" width="13" height="8" rx="1" fill="#1e3a5f" opacity="0.8"/>
+          <rect x="47" y="253" width="13" height="8" rx="1" fill="#b8973a" opacity="0.65"/>
+          <rect x="66" y="253" width="13" height="8" rx="1" fill="#1e3a5f" opacity="0.7"/>
+          <rect x="85" y="253" width="13" height="8" rx="1" fill="#1e3a5f" opacity="0.8"/>
+          <rect x="104" y="253" width="13" height="8" rx="1" fill="#b8973a" opacity="0.55"/>
+          <!-- Wheels -->
+          <circle cx="30" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="30" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="58" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="58" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="86" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="86" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="114" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="114" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="138" cy="283" r="6" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+
+          <!-- Superliner passenger car 1 -->
+          <rect x="148" y="244" width="138" height="32" rx="3" fill="#0c1a0c"/>
+          <rect x="148" y="273" width="138" height="3" fill="#c8402a"/>
+          <!-- Upper level windows (warm lit — ocean side) -->
+          <rect x="158" y="249" width="11" height="8" rx="1" fill="#b8973a" opacity="0.75"/>
+          <rect x="175" y="249" width="11" height="8" rx="1" fill="#1e3a5f" opacity="0.8"/>
+          <rect x="192" y="249" width="11" height="8" rx="1" fill="#b8973a" opacity="0.7"/>
+          <rect x="209" y="249" width="11" height="8" rx="1" fill="#b8973a" opacity="0.8"/>
+          <rect x="226" y="249" width="11" height="8" rx="1" fill="#1e3a5f" opacity="0.75"/>
+          <rect x="243" y="249" width="11" height="8" rx="1" fill="#b8973a" opacity="0.65"/>
+          <rect x="260" y="249" width="11" height="8" rx="1" fill="#1e3a5f" opacity="0.7"/>
+          <!-- Reflect ocean glow on windows -->
+          <rect x="158" y="249" width="11" height="8" rx="1" fill="rgba(26,58,95,0.2)"/>
+          <rect x="192" y="249" width="11" height="8" rx="1" fill="rgba(26,58,95,0.15)"/>
+          <!-- Wheels car 1 -->
+          <circle cx="170" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="170" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="200" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="200" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="236" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="236" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="268" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="268" cy="283" r="2.5" fill="#0e1a0e"/>
+
+          <!-- Sightseer Lounge car -->
+          <rect x="288" y="245" width="120" height="31" rx="3" fill="#0c1a0c"/>
+          <!-- Dome glass roof -->
+          <path d="M300,245 Q348,220 396,245Z" fill="#1e3a5f" opacity="0.55"/>
+          <path d="M300,245 Q348,223 396,245" stroke="#2a5a8f" stroke-width="1" fill="none" opacity="0.6"/>
+          <rect x="288" y="273" width="120" height="3" fill="#c8402a"/>
+          <!-- Lounge windows -->
+          <rect x="298" y="251" width="12" height="8" rx="1" fill="#b8973a" opacity="0.7"/>
+          <rect x="316" y="251" width="12" height="8" rx="1" fill="#1e3a5f" opacity="0.8"/>
+          <rect x="334" y="251" width="12" height="8" rx="1" fill="#b8973a" opacity="0.75"/>
+          <rect x="352" y="251" width="12" height="8" rx="1" fill="#b8973a" opacity="0.7"/>
+          <rect x="370" y="251" width="12" height="8" rx="1" fill="#1e3a5f" opacity="0.75"/>
+          <rect x="388" y="251" width="12" height="8" rx="1" fill="#b8973a" opacity="0.65"/>
+          <!-- Lounge wheels -->
+          <circle cx="306" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="306" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="335" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="335" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="365" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="365" cy="283" r="2.5" fill="#0e1a0e"/>
+          <circle cx="394" cy="283" r="7" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+
+          <!-- Third car (partial) -->
+          <rect x="410" y="247" width="150" height="29" rx="3" fill="#0a160a"/>
+          <rect x="410" y="273" width="150" height="3" fill="#c8402a"/>
+          <rect x="420" y="252" width="10" height="7" rx="1" fill="#b8973a" opacity="0.6"/>
+          <rect x="436" y="252" width="10" height="7" rx="1" fill="#1e3a5f" opacity="0.65"/>
+          <rect x="452" y="252" width="10" height="7" rx="1" fill="#b8973a" opacity="0.7"/>
+          <rect x="468" y="252" width="10" height="7" rx="1" fill="#b8973a" opacity="0.6"/>
+          <rect x="484" y="252" width="10" height="7" rx="1" fill="#1e3a5f" opacity="0.65"/>
+          <rect x="500" y="252" width="10" height="7" rx="1" fill="#b8973a" opacity="0.55"/>
+          <circle cx="428" cy="283" r="6" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="455" cy="283" r="6" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="484" cy="283" r="6" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+          <circle cx="512" cy="283" r="6" fill="#060e06" stroke="#1a2818" stroke-width="1.5"/>
+
+          <!-- Light from train on water surface -->
+          <ellipse cx="200" cy="310" rx="120" ry="12" fill="url(#coastGlow)"/>
+
+          <!-- Coast landscape below tracks -->
+          <path d="M0,290 Q80,298 160,292 Q240,286 320,293 Q400,300 480,292 Q520,287 560,290 L560,400 L0,400Z" fill="#08100a"/>
+
+          <!-- Distant lighthouse -->
+          <rect x="498" y="178" width="8" height="36" fill="#1a2a1a"/>
+          <rect x="494" y="175" width="16" height="6" rx="1" fill="#1e3a1e"/>
+          <!-- Lighthouse light beam -->
+          <line x1="502" y1="178" x2="480" y2="155" stroke="rgba(255,230,150,0.2)" stroke-width="2"/>
+          <circle cx="502" cy="178" r="3" fill="#ffe896" opacity="0.7"/>
+          <ellipse cx="502" cy="178" rx="8" ry="4" fill="rgba(255,230,150,0.15)"/>
+
+          <!-- Foreground rocks/shore -->
+          <ellipse cx="80" cy="380" rx="40" ry="12" fill="#060e06"/>
+          <ellipse cx="400" cy="390" rx="50" ry="10" fill="#060e06"/>
+          <ellipse cx="510" cy="375" rx="30" ry="9" fill="#060e06"/>
+
+          <!-- Steam -->
+          <circle cx="22" cy="238" r="8" fill="#1a2a1a" opacity="0.45"/>
+          <circle cx="32" cy="225" r="12" fill="#1a2a1a" opacity="0.3"/>
+          <circle cx="20" cy="212" r="15" fill="#1a2a1a" opacity="0.18"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-layout">
+    <main class="article-body">
+
+      <!-- TOC -->
+      <nav class="toc" aria-label="Article contents">
+        <div class="toc-title">In this guide</div>
+        <ol>
+          <li><a href="#overview">Route overview</a></li>
+          <li><a href="#stops">All stops &amp; schedule</a></li>
+          <li><a href="#scenic">The best scenic stretches</a></li>
+          <li><a href="#seats">Best seats for ocean views</a></li>
+          <li><a href="#tickets">Tickets &amp; what's included</a></li>
+          <li><a href="#booking">How to book &amp; save</a></li>
+          <li><a href="#tips">Practical tips</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+
+      <!-- Intro -->
+      <p class="lead-para" id="overview">The Coast Starlight is Amtrak's great coastal journey — 1,377 miles of Pacific shoreline, volcanic peaks, and old-growth forest between Los Angeles and Seattle. It's the only Amtrak route that traces the entire length of the West Coast, and it does it in a single overnight trip that takes just one night away from you.</p>
+
+      <p>Unlike the California Zephyr's 51-hour marathon, the Starlight clocks in at around 35 hours — short enough to do in coach if you're budget-conscious, but long enough to justify a sleeper room if you want the full experience. The train runs daily in both directions, and the stretch between Santa Barbara and San Luis Obispo — where the tracks run literally at the edge of the Pacific — is among the most dramatic rail scenery in North America.</p>
+
+      <div class="info-box">
+        <div class="info-box-title">At a glance</div>
+        <p><strong>Route:</strong> Los Angeles Union Station → Seattle King Street Station (or reverse)<br>
+        <strong>Distance:</strong> 1,377 miles &nbsp;·&nbsp; <strong>Duration:</strong> ~35 hours southbound, ~34 hours northbound<br>
+        <strong>Frequency:</strong> Daily in both directions &nbsp;·&nbsp; <strong>Equipment:</strong> Superliner double-deck cars<br>
+        <strong>Departures:</strong> LA departs 9:10 AM · Seattle departs 9:55 AM</p>
+      </div>
+
+      <!-- Section 1: Stops -->
+      <h2 id="stops">All stops along the Coast Starlight</h2>
+
+      <p>The Coast Starlight makes 28 stops between Los Angeles and Seattle, passing through three states and some of the most varied landscapes in the country. Below are the major stations with approximate southbound travel times from Seattle.</p>
+
+      <table class="stops-table">
+        <thead>
+          <tr>
+            <th style="width:36%">Station</th>
+            <th style="width:10%">State</th>
+            <th style="width:26%">Approx. time (SB from Seattle)</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-stop">
+            <td><span class="stop-name">Seattle King Street</span><span class="stop-note">Departs 9:55 AM</span></td>
+            <td>WA</td><td>Departure</td><td>—</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Tacoma</span></td>
+            <td>WA</td><td>Day 1, ~11:00 AM</td><td>Puget Sound views</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Olympia–Lacey</span></td>
+            <td>WA</td><td>Day 1, ~11:48 AM</td><td>State capital area</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Centralia</span></td>
+            <td>WA</td><td>Day 1, ~12:32 PM</td><td></td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Kelso–Longview</span></td>
+            <td>WA</td><td>Day 1, ~1:30 PM</td><td>Columbia River</td>
+          </tr>
+          <tr class="highlight-stop">
+            <td><span class="stop-name">Portland Union Station</span><span class="stop-note">Major hub · 45 min stop</span></td>
+            <td>OR</td><td>Day 1, ~4:30 PM</td><td>Crew change, good meal stop</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Salem</span></td>
+            <td>OR</td><td>Day 1, ~6:00 PM</td><td>Willamette Valley</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Albany</span></td>
+            <td>OR</td><td>Day 1, ~6:48 PM</td><td></td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Eugene</span></td>
+            <td>OR</td><td>Day 1, ~7:45 PM</td><td>University town</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Chemult</span></td>
+            <td>OR</td><td>Day 1, ~10:30 PM</td><td>High desert, overnight</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Klamath Falls</span></td>
+            <td>OR</td><td>Day 1, ~11:49 PM</td><td>Crater Lake gateway</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Dunsmuir</span></td>
+            <td>CA</td><td>Day 2, ~3:35 AM</td><td>Mt Shasta approach</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Redding</span></td>
+            <td>CA</td><td>Day 2, ~5:22 AM</td><td></td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Chico</span></td>
+            <td>CA</td><td>Day 2, ~7:13 AM</td><td></td>
+          </tr>
+          <tr class="highlight-stop">
+            <td><span class="stop-name">Sacramento</span><span class="stop-note">California capital</span></td>
+            <td>CA</td><td>Day 2, ~9:00 AM</td><td>Gold Rush history</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Davis</span></td>
+            <td>CA</td><td>Day 2, ~9:34 AM</td><td>UC Davis</td>
+          </tr>
+          <tr class="highlight-stop">
+            <td><span class="stop-name">Emeryville</span><span class="stop-note">SF Bay Area gateway</span></td>
+            <td>CA</td><td>Day 2, ~10:22 AM</td><td>Bus connection to SF</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Oakland Coliseum</span></td>
+            <td>CA</td><td>Day 2, ~10:50 AM</td><td></td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">San Jose</span></td>
+            <td>CA</td><td>Day 2, ~12:23 PM</td><td></td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Salinas</span></td>
+            <td>CA</td><td>Day 2, ~1:40 PM</td><td>Steinbeck country</td>
+          </tr>
+          <tr class="highlight-stop">
+            <td><span class="stop-name">San Luis Obispo</span><span class="stop-note">🌊 Ocean views begin</span></td>
+            <td>CA</td><td>Day 2, ~3:10 PM</td><td>Best coastal stretch starts here</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Santa Barbara</span><span class="stop-note">🌊 Prime coastal stretch</span></td>
+            <td>CA</td><td>Day 2, ~5:15 PM</td><td>Spanish architecture, beaches</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Oxnard / Ventura</span></td>
+            <td>CA</td><td>Day 2, ~6:05 PM</td><td>Pacific views continue</td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Simi Valley</span></td>
+            <td>CA</td><td>Day 2, ~6:52 PM</td><td></td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Van Nuys</span></td>
+            <td>CA</td><td>Day 2, ~7:35 PM</td><td></td>
+          </tr>
+          <tr>
+            <td><span class="stop-name">Burbank–Bob Hope</span></td>
+            <td>CA</td><td>Day 2, ~8:00 PM</td><td>Airport connection</td>
+          </tr>
+          <tr class="highlight-stop">
+            <td><span class="stop-name">Los Angeles Union Station</span><span class="stop-note">Arrives ~9:10 PM</span></td>
+            <td>CA</td><td>Day 2, ~9:10 PM</td><td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Times shown are approximate and reflect typical southbound (Seattle → LA) scheduling. The northbound journey is slightly faster at around 34 hours. Delays are common — the Starlight shares freight rail tracks and averages 1–2 hours late on most runs. Don't book tight connections at either endpoint.</p>
+
+      <!-- Section 2: Scenic -->
+      <h2 id="scenic">The best scenic stretches</h2>
+
+      <p>The Coast Starlight has four distinct scenic acts, each worth being awake for. In the southbound direction, here's when and where to be in the Sightseer Lounge:</p>
+
+      <div class="scenic-grid">
+        <div class="scenic-card">
+          <div class="scenic-card-region">Washington</div>
+          <div class="scenic-card-title">Puget Sound &amp; Cascade foothills</div>
+          <div class="scenic-card-desc">Departing Seattle, the train skirts the eastern shore of Puget Sound before climbing into dense Pacific Northwest forest. Low cloud and fog give it an atmospheric, moody quality — especially in the mornings.</div>
+          <div class="scenic-card-timing">Southbound Day 1, 10 AM–1 PM</div>
+        </div>
+        <div class="scenic-card">
+          <div class="scenic-card-region">Oregon / Northern California</div>
+          <div class="scenic-card-title">Mount Shasta &amp; the Cascades</div>
+          <div class="scenic-card-desc">The volcanic cone of Mount Shasta dominates the skyline for nearly two hours as the train descends through the Cascades into California. Northbound riders catch this at sunrise — one of the best moments on the whole route.</div>
+          <div class="scenic-card-timing">Southbound: early morning Day 2, ~3–5 AM (bring night-vision or sleep through it northbound)</div>
+        </div>
+        <div class="scenic-card">
+          <div class="scenic-card-region">Central California</div>
+          <div class="scenic-card-title">The Pacific Coast stretch</div>
+          <div class="scenic-card-desc">The undisputed highlight. Between San Luis Obispo and Oxnard, the tracks run within metres of the water along cliffs and beaches. This is where the Coast Starlight earns its name — the train hugs the shoreline so closely you can hear the waves if you open a window.</div>
+          <div class="scenic-card-timing">Southbound Day 2, ~3–6 PM — perfect golden-hour light</div>
+        </div>
+        <div class="scenic-card">
+          <div class="scenic-card-region">Northern California</div>
+          <div class="scenic-card-title">Sacramento Valley &amp; the Bay</div>
+          <div class="scenic-card-desc">The approach to the San Francisco Bay through Sacramento and the East Bay is more urban but still pleasant, with views of the bay and the hills of the Marin Headlands in the distance as you pull into Emeryville.</div>
+          <div class="scenic-card-timing">Southbound Day 2, ~9–11 AM</div>
+        </div>
+      </div>
+
+      <p><strong>Pro tip:</strong> If you can only ride one segment, do the coastal stretch southbound in the afternoon. Northbound riders miss most of it in the dark. The timetable has the train departing LA in the morning northbound, meaning you hit the Santa Barbara coast around midday — also excellent.</p>
+
+      <!-- Section 3: Best seats -->
+      <h2 id="seats">Best seats for ocean views</h2>
+
+      <p>This is the question every Coast Starlight traveller asks, and the honest answer is more nuanced than most guides admit. Here's the definitive breakdown:</p>
+
+      <div class="seat-tip">
+        <div class="seat-tip-icon">🪟</div>
+        <div>
+          <div class="seat-tip-label">Ocean side seating</div>
+          <div class="seat-tip-heading">Sit on the right side heading south, left side heading north</div>
+          <div class="seat-tip-body">The Pacific Ocean is to the <strong>west</strong>. Heading southbound (Seattle → LA), the ocean is on your <strong>right</strong>. Heading northbound (LA → Seattle), the ocean is on your <strong>left</strong>. For coach seats, ask for the ocean-facing side when you board. The Sightseer Lounge car has windows on both sides and wrap-around views — the best bet regardless of which seat you're assigned.</div>
+        </div>
+      </div>
+
+      <p>For roomette passengers: the car orientation is set in the train yard and you won't know which way it's facing until you board. Odd-numbered roomettes are typically on the ocean side when the car is in standard orientation, but this is not guaranteed — cars are occasionally reversed. Your best strategy is to spend the Santa Barbara–SLO stretch in the Sightseer Lounge regardless of your room.</p>
+
+      <p>For Mount Shasta views (northbound), you want the <strong>east-facing windows</strong> — the right side heading north. Again, the Sightseer Lounge handles this automatically since it wraps around.</p>
+
+      <!-- Section 4: Tickets -->
+      <h2 id="tickets">Tickets and what's included</h2>
+
+      <p>The Coast Starlight runs Superliner double-deck equipment — the same as the California Zephyr. You have three main options:</p>
+
+      <div class="ticket-grid">
+        <div class="ticket-card">
+          <div class="ticket-label">Budget option</div>
+          <div class="ticket-name">Coach</div>
+          <div class="ticket-price">From ~$59</div>
+          <ul class="ticket-features">
+            <li><span class="tick">✓</span>Large reclining seats, upper or lower deck</li>
+            <li><span class="tick">✓</span>Sightseer Lounge access</li>
+            <li><span class="tick">✓</span>Power outlets at every seat</li>
+            <li><span class="tick">✓</span>Café car for snacks and drinks</li>
+            <li><span class="tick" style="color:var(--ink-muted)">✗</span>Meals not included</li>
+            <li><span class="tick" style="color:var(--ink-muted)">✗</span>Sleep sitting up for overnight</li>
+          </ul>
+        </div>
+        <div class="ticket-card featured">
+          <div class="featured-badge">Most popular</div>
+          <div class="ticket-label">Best value overnight</div>
+          <div class="ticket-name">Roomette</div>
+          <div class="ticket-price">From ~$180</div>
+          <ul class="ticket-features">
+            <li><span class="tick-gold">✓</span>Private room for 1–2 passengers</li>
+            <li><span class="tick-gold">✓</span>Fold-down beds (upper and lower)</li>
+            <li><span class="tick-gold">✓</span>All meals included in dining car</li>
+            <li><span class="tick-gold">✓</span>Large picture window</li>
+            <li><span class="tick-gold">✓</span>Turn-down service</li>
+            <li><span class="tick-gold">✓</span>Shared shower at end of car</li>
+          </ul>
+        </div>
+        <div class="ticket-card">
+          <div class="ticket-label">Maximum comfort</div>
+          <div class="ticket-name">Bedroom</div>
+          <div class="ticket-price">From ~$380</div>
+          <ul class="ticket-features">
+            <li><span class="tick">✓</span>Larger private room for 1–2</li>
+            <li><span class="tick">✓</span>Full-size lower bed + upper berth</li>
+            <li><span class="tick">✓</span>Private toilet &amp; fold-down sink</li>
+            <li><span class="tick">✓</span>Shower in-room (fold-out)</li>
+            <li><span class="tick">✓</span>All meals included</li>
+            <li><span class="tick">✓</span>More wardrobe storage</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Meals included with sleeper tickets means breakfast, lunch, and dinner in the dining car — not just snacks. The dining car on the Coast Starlight serves proper plated meals. Sleeper passengers are given reservation times for each meal; show up a few minutes early, especially for dinner.</p>
+
+      <div class="affiliate-box">
+        <div class="affiliate-icon">🎫</div>
+        <div class="affiliate-content">
+          <div class="affiliate-label">Book this route</div>
+          <div class="affiliate-title">Coast Starlight tickets on Amtrak</div>
+          <p class="affiliate-desc">Roomettes on the Coast Starlight sell out weeks ahead during summer. Coach fares fluctuate with demand — the best prices are 2–3 months out.</p>
+          <a href="https://www.amtrak.com/coast-starlight-train" class="affiliate-btn" target="_blank" rel="noopener sponsored">Check availability on Amtrak</a>
+          <span class="affiliate-price">Coach from ~$59 · Roomette from ~$180</span>
+        </div>
+      </div>
+
+      <!-- Section 5: Booking -->
+      <h2 id="booking">How to book and save</h2>
+
+      <p>The Coast Starlight uses Amtrak's dynamic pricing, meaning fares rise as seats fill. A few strategies that consistently work:</p>
+
+      <ul>
+        <li><strong>Book 2–3 months ahead for roomettes.</strong> Summer and autumn are peak seasons — July and August departures sell out the furthest in advance. Weekday departures (Tuesday/Wednesday) are usually 10–20% cheaper than weekends.</li>
+        <li><strong>The Los Angeles → Seattle direction is often cheaper</strong> than the reverse. Check both directions if your itinerary is flexible.</li>
+        <li><strong>Partial-route segments are strong value.</strong> LA → Santa Barbara (under 3 hours) or Emeryville → Portland (an overnight) give you the scenic highlights without committing to the full 35 hours.</li>
+        <li><strong>Students save 15% with code V814.</strong> The national student discount applies to the Coast Starlight for coach seats. See our <a href="/amtrak/student-discount.html">Amtrak student discount guide</a> for full details.</li>
+        <li><strong>Join Amtrak Guest Rewards before you book.</strong> Points accrue on every purchase, including discounted fares.</li>
+      </ul>
+
+      <!-- Section 6: Tips -->
+      <h2 id="tips">Practical tips for the journey</h2>
+
+      <ul class="tips-list">
+        <li><strong>Get to the Sightseer Lounge early</strong> for the coastal stretch. Between Santa Barbara and San Luis Obispo the lounge fills completely. Stake a window spot at least 30 minutes before Oxnard if you're heading north, or before San Luis Obispo heading south.</li>
+        <li><strong>The Sightseer Lounge has a lower level café</strong> with sandwiches, snacks, and drinks. It's open to all passengers. Hot food in the dining car upstairs is table-service for sleeper passengers at set meal times.</li>
+        <li><strong>Cell service disappears for long stretches,</strong> especially through Oregon and the Cascades. Download entertainment before you board. The train has wifi but it's unreliable — treat it as a bonus, not a given.</li>
+        <li><strong>Power outlets are at every coach seat</strong> and in all sleeping car rooms. Bring a multi-plug adaptor if you're travelling with multiple devices.</li>
+        <li><strong>For the northbound Mount Shasta view,</strong> set an alarm for around 5–6 AM — the mountain appears before the sun is fully up. Clear mornings give you a snow-capped volcanic cone against a pale blue sky. Worth the early wake-up.</li>
+        <li><strong>San Francisco is not a direct stop.</strong> Emeryville is the closest station. Amtrak runs a free connecting bus from Emeryville to the Caltrain station and the Ferry Building in San Francisco — it's included in your ticket and takes about 30 minutes.</li>
+        <li><strong>The Portland stop is around 45 minutes</strong> — long enough to get off and stretch your legs or grab food from the station food court. Don't wander far; the train leaves on time.</li>
+        <li><strong>Pack layers.</strong> The train's air conditioning is aggressively cold, especially overnight in coach. Bring a blanket or a light jacket even in summer.</li>
+      </ul>
+
+      <!-- Section 7: FAQ -->
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <h3>Is the Coast Starlight worth taking?</h3>
+      <p>Yes, especially for the southern California coastal section. The stretch between Santa Barbara and San Luis Obispo is genuinely extraordinary — the train runs so close to the ocean you could almost reach out and touch the water. If you're already travelling the West Coast and have a day to spare, it beats flying for the experience.</p>
+
+      <h3>How late does the Coast Starlight run?</h3>
+      <p>Frequently. The train averages around 1–2 hours late on most runs, and can run significantly more on bad days. This is a structural issue with freight-priority rail in the US, not something Amtrak can easily fix. Plan accordingly — don't book a connecting flight within 3 hours of your scheduled arrival, and check the real-time status on departure day.</p>
+
+      <h3>Do I need a sleeper for the overnight portion?</h3>
+      <p>Not necessarily. The coast from Santa Barbara to SLO is entirely in daylight on both southbound and northbound runs, so the key scenic section doesn't require an overnight stay. If you're on a tight budget, coach is manageable for the full trip — the seats recline significantly and the lounge car gives you somewhere to sit upright. That said, a roomette transforms the experience for what is still a reasonable price premium.</p>
+
+      <h3>Can I do just part of the route?</h3>
+      <p>Absolutely — Amtrak sells tickets for any segment. Popular partial routes include LA → Santa Barbara (2.5 hours, beautiful coastal day trip), Emeryville → Portland (overnight, catches the Cascades and Sacramento), and Seattle → Portland (4.5 hours, a scenic afternoon run through Washington). Point-to-point pricing means shorter segments are generally cheaper than you'd expect.</p>
+
+      <h3>Is the dining car still running?</h3>
+      <p>Yes. As of 2025, the Coast Starlight has a traditional full-service dining car with table service for sleeper passengers. Coach passengers use the Sightseer Lounge café for purchases. The dining car reopened on long-distance trains after a pandemic-era hiatus; the Coast Starlight was one of the first to restore it fully.</p>
+
+      <h3>How do I get from Emeryville to San Francisco?</h3>
+      <p>Amtrak provides a free connecting bus (the Amtrak Thruway Bus) from Emeryville station to the SF Ferry Building. It's included in your ticket and runs automatically when the train arrives. The journey takes about 20–30 minutes depending on Bay Bridge traffic. No separate booking required — just board the bus with your Amtrak ticket.</p>
+
+      <!-- Author -->
+      <div class="author-box">
+        <div class="author-avatar">SK</div>
+        <div>
+          <div class="author-name">Sarah Kendall</div>
+          <div class="author-title">Senior rail writer · traintravel.guide</div>
+          <div class="author-bio">Sarah has ridden over 40,000 miles of train routes across 22 countries. She specialises in Amtrak long-distance routes and Japan Rail. Previously a staff writer at Condé Nast Traveler.</div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="article-sidebar">
+
+      <div class="sidebar-affiliate">
+        <div class="sidebar-affiliate-label">Book this route</div>
+        <div class="sidebar-affiliate-name">Coast Starlight</div>
+        <div class="sidebar-affiliate-price">Coach from ~$59 · Roomette from ~$180</div>
+        <a href="https://www.amtrak.com/coast-starlight-train" class="sidebar-affiliate-btn" target="_blank" rel="noopener sponsored">Check on Amtrak →</a>
+        <div class="sidebar-affiliate-note">We may earn a commission. No extra cost to you.</div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-head"><div class="sidebar-card-title">Quick facts</div></div>
+        <div class="sidebar-card-body">
+          <div class="fact-row"><span class="fact-label">Distance</span><span class="fact-value">1,377 miles</span></div>
+          <div class="fact-row"><span class="fact-label">Duration</span><span class="fact-value">~35 hrs southbound</span></div>
+          <div class="fact-row"><span class="fact-label">Frequency</span><span class="fact-value">Daily both directions</span></div>
+          <div class="fact-row"><span class="fact-label">States</span><span class="fact-value">CA, OR, WA</span></div>
+          <div class="fact-row"><span class="fact-label">Equipment</span><span class="fact-value">Superliner (double-deck)</span></div>
+          <div class="fact-row"><span class="fact-label">Meals included</span><span class="fact-value">Sleeper passengers only</span></div>
+          <div class="fact-row"><span class="fact-label">Ocean views</span><span class="fact-value">SLO → Oxnard (afternoon)</span></div>
+          <div class="fact-row"><span class="fact-label">Ocean side (SB)</span><span class="fact-value">Right / west-facing</span></div>
+          <div class="fact-row"><span class="fact-label">SF connection</span><span class="fact-value">Free bus from Emeryville</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-head"><div class="sidebar-card-title">Related guides</div></div>
+        <div class="sidebar-card-body" style="padding-top:0.5rem">
+          <ul class="related-list">
+            <li><a href="/amtrak/california-zephyr.html"><span class="related-tag">Amtrak</span><br>California Zephyr: Complete 2025 Guide</a></li>
+            <li><a href="/amtrak/student-discount.html"><span class="related-tag">Amtrak</span><br>Amtrak Student Discount: Save 15%</a></li>
+            <li><a href="/amtrak/"><span class="related-tag">Amtrak</span><br>All Amtrak long-distance routes</a></li>
+            <li><a href="/passes/"><span class="related-tag">Rail passes</span><br>Is the Amtrak USA Rail Pass worth it?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-affiliate" style="background: var(--forest);">
+        <div class="sidebar-affiliate-label">Also popular</div>
+        <div class="sidebar-affiliate-name">Amtrak Student Discount</div>
+        <div class="sidebar-affiliate-price">15% off · Code V814 · Ages 17–24</div>
+        <a href="/amtrak/student-discount.html" class="sidebar-affiliate-btn" style="background: rgba(255,255,255,0.15);">Read the guide →</a>
+        <div class="sidebar-affiliate-note">No blackout dates · Book 1 day ahead</div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- NEXT ARTICLE -->
+  <a href="/japan/" class="next-article">
+    <div>
+      <div class="next-label">Next guide</div>
+      <div class="next-title">Japan Rail Pass: The Complete Guide to Buying and Using a JR Pass</div>
+    </div>
+    <div class="next-arrow">→</div>
+  </a>
+
+  <div id="footer-placeholder"></div>
+  <script src="/js/main.js"></script>
+</body>
+</html>

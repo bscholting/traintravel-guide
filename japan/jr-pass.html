@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Rail Pass: Complete 2025 Guide — Is It Worth It? — traintravel.guide</title>
+  <meta name="description" content="Everything about the Japan Rail Pass: 2025 prices, what's included, what's not, and an honest route-by-route breakdown of when it saves money — and when it doesn't.">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body { padding-top: 56px; }
+
+    /* ── HERO ── */
+    .article-hero { background: var(--ink); position: relative; overflow: hidden; min-height: 480px; display: grid; grid-template-columns: 1fr 1fr; }
+    .article-hero-left { padding: 4rem 3rem 4rem 4rem; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+    .article-hero-right { position: relative; overflow: hidden; background: #0a0a14; }
+    .hero-art { position: absolute; inset: 0; }
+    .breadcrumb { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--gold-light); }
+    .breadcrumb-sep { color: rgba(255,255,255,0.2); }
+    .article-tag { display: inline-block; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: white; background: var(--forest); padding: 3px 10px; margin-bottom: 1.2rem; border-radius: 2px; }
+    .article-hero-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; line-height: 1.1; color: var(--cream); margin-bottom: 1rem; }
+    .article-hero-subtitle { font-size: 1rem; color: rgba(255,255,255,0.55); line-height: 1.6; max-width: 420px; margin-bottom: 2rem; }
+    .article-meta-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .meta-item { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); display: flex; align-items: center; gap: 6px; }
+    .meta-dot { color: var(--forest); font-size: 0.5rem; }
+    .article-hero-left > * { animation: fadeUp 0.8s ease both; }
+    .article-hero-left > *:nth-child(1) { animation-delay: 0s; }
+    .article-hero-left > *:nth-child(2) { animation-delay: 0.08s; }
+    .article-hero-left > *:nth-child(3) { animation-delay: 0.16s; }
+    .article-hero-left > *:nth-child(4) { animation-delay: 0.24s; }
+    .article-hero-left > *:nth-child(5) { animation-delay: 0.32s; }
+
+    /* ── LAYOUT ── */
+    .article-layout { display: grid; grid-template-columns: 1fr min(var(--col-main), 100%) 320px 1fr; align-items: start; padding: 4rem 0; }
+    .article-body { grid-column: 2; padding-right: 3rem; }
+    .article-sidebar { grid-column: 3; position: sticky; top: 80px; }
+
+    /* ── PRICE TABLE ── */
+    .price-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1.5rem 0 2rem; }
+    .price-table th { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); padding: 0 1rem 0.75rem; text-align: left; border-bottom: 1px solid var(--cream-dark); }
+    .price-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--cream-dark); color: var(--ink-light); vertical-align: middle; }
+    .price-table tr:hover td { background: white; }
+    .pass-name { font-weight: 500; color: var(--ink); }
+    .price-jpy { font-family: var(--mono); color: var(--ink); font-weight: 500; }
+    .price-usd { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-muted); }
+
+    /* ── VERDICT BOX ── */
+    .verdict { border-radius: 4px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; gap: 1.25rem; align-items: flex-start; }
+    .verdict.worth-it { background: rgba(45,74,53,0.08); border-left: 3px solid var(--forest); }
+    .verdict.not-worth-it { background: rgba(200,64,42,0.06); border-left: 3px solid var(--rail); }
+    .verdict.maybe { background: rgba(184,151,58,0.08); border-left: 3px solid var(--gold); }
+    .verdict-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+    .verdict-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 5px; }
+    .verdict.worth-it .verdict-label { color: var(--forest); }
+    .verdict.not-worth-it .verdict-label { color: var(--rail); }
+    .verdict.maybe .verdict-label { color: var(--gold); }
+    .verdict-heading { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; }
+    .verdict-body { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.65; }
+    .verdict-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ── ROUTE COST TABLE ── */
+    .route-cost-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 1.5rem 0 0.5rem; }
+    .route-cost-table th { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); padding: 0 0.75rem 0.75rem; text-align: left; border-bottom: 1px solid var(--cream-dark); }
+    .route-cost-table td { padding: 0.75rem 0.75rem; border-bottom: 1px solid var(--cream-dark); color: var(--ink-light); vertical-align: middle; font-size: 0.82rem; }
+    .route-cost-table .route-leg { font-weight: 500; color: var(--ink); }
+    .route-cost-table .cost-jpy { font-family: var(--mono); color: var(--ink); }
+    .route-cost-table .total-row td { font-weight: 500; color: var(--ink); background: var(--cream-dark); font-family: var(--mono); }
+    .route-cost-table .verdict-cell-good { font-family: var(--mono); font-size: 0.72rem; color: var(--forest); background: rgba(45,74,53,0.08); padding: 3px 8px; border-radius: 3px; white-space: nowrap; }
+    .route-cost-table .verdict-cell-bad { font-family: var(--mono); font-size: 0.72rem; color: var(--rail); background: rgba(200,64,42,0.06); padding: 3px 8px; border-radius: 3px; white-space: nowrap; }
+
+    /* ── ITINERARY BLOCKS ── */
+    .itinerary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cream-dark); margin: 1.5rem 0 2rem; }
+    .itin-card { background: var(--cream); padding: 1.5rem; }
+    .itin-card.highlight { background: var(--ink); }
+    .itin-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.4rem; }
+    .itin-card.highlight .itin-label { color: rgba(255,255,255,0.4); }
+    .itin-title { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .itin-card.highlight .itin-title { color: var(--cream); }
+    .itin-route { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 0.75rem; }
+    .itin-card.highlight .itin-route { color: rgba(255,255,255,0.5); }
+    .itin-verdict { font-size: 0.82rem; font-weight: 500; }
+    .itin-verdict.good { color: var(--forest); }
+    .itin-verdict.bad { color: var(--rail); }
+    .itin-verdict.maybe { color: var(--gold); }
+
+    /* ── WHAT'S INCLUDED / NOT ── */
+    .coverage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cream-dark); margin: 1.5rem 0 2rem; }
+    .coverage-col { background: var(--cream); padding: 1.5rem; }
+    .coverage-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1rem; }
+    .coverage-col.included .coverage-col-title { color: var(--forest); }
+    .coverage-col.excluded .coverage-col-title { color: var(--rail); }
+    .coverage-list { list-style: none; padding: 0; margin: 0; }
+    .coverage-list li { font-size: 0.88rem; color: var(--ink-light); padding: 6px 0; border-bottom: 1px solid var(--cream-dark); display: flex; align-items: flex-start; gap: 8px; line-height: 1.45; }
+    .coverage-list li:last-child { border-bottom: none; }
+    .ci { color: var(--forest); font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; }
+    .cx { color: var(--rail); font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── HOW TO BUY STEPS ── */
+    .steps { margin: 1.5rem 0; }
+    .step { display: flex; gap: 1.25rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 28px; height: 28px; background: var(--forest); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.8rem; font-weight: 500; margin-top: 2px; }
+    .step-title { font-weight: 500; color: var(--ink); font-size: 1rem; margin-bottom: 4px; }
+    .step-desc { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; margin: 0; }
+    .step-desc strong { color: var(--ink); font-weight: 500; }
+
+    /* ── REGIONAL PASSES ── */
+    .regional-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cream-dark); margin: 1.5rem 0 2rem; }
+    .regional-card { background: var(--cream); padding: 1.25rem 1.5rem; }
+    .regional-name { font-weight: 500; color: var(--ink); font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .regional-price { font-family: var(--mono); font-size: 0.8rem; color: var(--gold); margin-bottom: 0.4rem; }
+    .regional-desc { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.55; }
+
+    /* ── WARNING BOX ── */
+    .warning-box { background: rgba(200,64,42,0.05); border: 1px solid rgba(200,64,42,0.2); border-left: 3px solid var(--rail); padding: 1.25rem 1.5rem; margin: 2rem 0; border-radius: 0 4px 4px 0; }
+    .warning-box p { font-size: 0.92rem !important; color: var(--ink-light) !important; line-height: 1.65 !important; margin: 0 !important; }
+    .warning-box p strong { color: var(--rail) !important; }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+  <div id="progress"><div id="progress-fill"></div></div>
+
+  <!-- HERO -->
+  <header class="article-hero">
+    <div class="article-hero-left">
+      <div class="breadcrumb">
+        <a href="/">traintravel.guide</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/japan/">Japan Rail</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>JR Pass guide</span>
+      </div>
+      <span class="article-tag">Japan Rail</span>
+      <h1 class="article-hero-title">Japan Rail Pass: Complete 2025 Guide</h1>
+      <p class="article-hero-subtitle">What it costs, what it covers, and an honest route-by-route breakdown of when it saves money — and when it doesn't.</p>
+      <div class="article-meta-row">
+        <span class="meta-item"><span class="meta-dot">●</span> 10 min read</span>
+        <span class="meta-item"><span class="meta-dot">●</span> Updated May 2025</span>
+        <span class="meta-item"><span class="meta-dot">●</span> By Sarah Kendall</span>
+      </div>
+    </div>
+
+    <div class="article-hero-right">
+      <div class="hero-art">
+        <!-- Shinkansen bullet train at dusk illustration -->
+        <svg viewBox="0 0 560 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+          <defs>
+            <linearGradient id="jpSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0a0a18"/>
+              <stop offset="50%" stop-color="#1a1a38"/>
+              <stop offset="100%" stop-color="#2a1a28"/>
+            </linearGradient>
+            <linearGradient id="jpGround" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0e0e1a"/>
+              <stop offset="100%" stop-color="#060610"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Sky -->
+          <rect width="560" height="480" fill="url(#jpSky)"/>
+
+          <!-- Stars -->
+          <circle cx="30" cy="20" r="0.8" fill="white" opacity="0.5"/>
+          <circle cx="90" cy="12" r="1" fill="white" opacity="0.4"/>
+          <circle cx="160" cy="30" r="0.8" fill="white" opacity="0.55"/>
+          <circle cx="250" cy="15" r="1" fill="white" opacity="0.35"/>
+          <circle cx="340" cy="25" r="0.8" fill="white" opacity="0.5"/>
+          <circle cx="420" cy="10" r="1.1" fill="white" opacity="0.4"/>
+          <circle cx="500" cy="28" r="0.8" fill="white" opacity="0.5"/>
+          <circle cx="540" cy="14" r="0.9" fill="white" opacity="0.35"/>
+          <circle cx="70" cy="55" r="0.7" fill="white" opacity="0.3"/>
+          <circle cx="200" cy="50" r="0.8" fill="white" opacity="0.4"/>
+          <circle cx="460" cy="45" r="0.7" fill="white" opacity="0.3"/>
+
+          <!-- Mount Fuji silhouette -->
+          <path d="M320,200 L420,60 L520,200Z" fill="#14142a" opacity="0.95"/>
+          <!-- Snow cap -->
+          <path d="M408,80 L420,60 L432,80 Q420,90 408,80Z" fill="#c8c0b8" opacity="0.55"/>
+          <!-- Fuji slopes detail -->
+          <path d="M340,200 L420,75 L500,200" fill="none" stroke="#1e1e3a" stroke-width="1" opacity="0.6"/>
+
+          <!-- Moon -->
+          <circle cx="80" cy="70" r="30" fill="#d4cfc8" opacity="0.7"/>
+          <circle cx="90" cy="63" r="24" fill="#0a0a18" opacity="0.9"/>
+          <!-- Moon reflection -->
+          <ellipse cx="80" cy="340" rx="14" ry="40" fill="rgba(212,207,200,0.06)"/>
+
+          <!-- Cherry blossom tree silhouettes -->
+          <rect x="38" y="230" width="6" height="55" fill="#1a0e18"/>
+          <ellipse cx="41" cy="225" rx="22" ry="18" fill="#2a1428" opacity="0.9"/>
+          <ellipse cx="55" cy="218" rx="14" ry="12" fill="#2a1428" opacity="0.7"/>
+          <!-- Blossom dots -->
+          <circle cx="32" cy="218" r="3" fill="#e8a0b8" opacity="0.6"/>
+          <circle cx="44" cy="210" r="2.5" fill="#e8a0b8" opacity="0.7"/>
+          <circle cx="55" cy="214" r="2" fill="#e8a0b8" opacity="0.55"/>
+          <circle cx="50" cy="222" r="2.5" fill="#e8a0b8" opacity="0.65"/>
+          <circle cx="38" cy="224" r="2" fill="#e8a0b8" opacity="0.5"/>
+          <circle cx="62" cy="218" r="2" fill="#e8a0b8" opacity="0.55"/>
+
+          <rect x="488" y="235" width="5" height="50" fill="#1a0e18"/>
+          <ellipse cx="490" cy="228" rx="18" ry="15" fill="#2a1428" opacity="0.85"/>
+          <circle cx="480" cy="224" r="2.5" fill="#e8a0b8" opacity="0.6"/>
+          <circle cx="492" cy="218" r="2" fill="#e8a0b8" opacity="0.7"/>
+          <circle cx="500" cy="222" r="2.5" fill="#e8a0b8" opacity="0.55"/>
+          <circle cx="484" cy="230" r="2" fill="#e8a0b8" opacity="0.65"/>
+
+          <!-- Ground / landscape -->
+          <rect x="0" y="285" width="560" height="195" fill="url(#jpGround)"/>
+
+          <!-- Rice fields / flat terrain texture -->
+          <rect x="0" y="300" width="560" height="2" fill="#1a1a2a" opacity="0.6"/>
+          <rect x="0" y="318" width="560" height="1.5" fill="#1a1a2a" opacity="0.4"/>
+          <rect x="0" y="335" width="560" height="1" fill="#1a1a2a" opacity="0.3"/>
+
+          <!-- Rail tracks — perfect straight Shinkansen lines -->
+          <line x1="0" y1="358" x2="560" y2="358" stroke="#2a2a3a" stroke-width="2.5"/>
+          <line x1="0" y1="366" x2="560" y2="366" stroke="#2a2a3a" stroke-width="2.5"/>
+          <!-- Sleepers (evenly spaced — Shinkansen-style) -->
+          <line x1="20" y1="356" x2="20" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="56" y1="356" x2="56" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="92" y1="356" x2="92" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="128" y1="356" x2="128" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="164" y1="356" x2="164" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="200" y1="356" x2="200" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="236" y1="356" x2="236" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="272" y1="356" x2="272" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="308" y1="356" x2="308" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="344" y1="356" x2="344" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="380" y1="356" x2="380" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="416" y1="356" x2="416" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="452" y1="356" x2="452" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="488" y1="356" x2="488" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+          <line x1="524" y1="356" x2="524" y2="368" stroke="#1e1e2e" stroke-width="4"/>
+
+          <!-- Shinkansen N700 bullet train -->
+          <!-- Distinctive aerodynamic nose -->
+          <path d="M-20,318 Q30,308 80,312 L80,348 Q30,352 -20,348 Z" fill="#f0f0f8"/>
+          <!-- Main body -->
+          <rect x="80" y="310" width="480" height="42" fill="#f0f0f8"/>
+          <!-- Nose detail / aerodynamic underside -->
+          <path d="M-20,340 Q30,342 80,342" fill="none" stroke="#d0d0d8" stroke-width="1.5"/>
+          <!-- Blue stripe (N700 characteristic) -->
+          <rect x="-20" y="332" width="560" height="5" fill="#1a3a8a"/>
+          <!-- Underbody dark section -->
+          <rect x="80" y="348" width="480" height="4" rx="0" fill="#c8c8d0"/>
+          <!-- Windows (characteristic Shinkansen window rows) -->
+          <!-- Upper windows (smaller) -->
+          <rect x="90" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.85"/>
+          <rect x="116" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="142" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.85"/>
+          <rect x="168" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="194" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.85"/>
+          <rect x="220" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="246" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.85"/>
+          <rect x="272" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="298" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.85"/>
+          <rect x="324" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="350" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.85"/>
+          <rect x="376" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="402" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.85"/>
+          <rect x="428" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="454" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.85"/>
+          <rect x="480" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="506" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.8"/>
+          <rect x="532" y="315" width="14" height="7" rx="1.5" fill="#2a4a7a" opacity="0.75"/>
+          <!-- Larger passenger windows -->
+          <rect x="90" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.65"/>
+          <rect x="116" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.7"/>
+          <rect x="142" y="326" width="18" height="14" rx="2" fill="#f8e898" opacity="0.5"/>
+          <rect x="168" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.65"/>
+          <rect x="194" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.7"/>
+          <rect x="220" y="326" width="18" height="14" rx="2" fill="#f8e898" opacity="0.45"/>
+          <rect x="246" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.65"/>
+          <rect x="272" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.7"/>
+          <rect x="298" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.65"/>
+          <rect x="324" y="326" width="18" height="14" rx="2" fill="#f8e898" opacity="0.5"/>
+          <rect x="350" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.7"/>
+          <rect x="376" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.65"/>
+          <rect x="402" y="326" width="18" height="14" rx="2" fill="#f8e898" opacity="0.45"/>
+          <rect x="428" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.7"/>
+          <rect x="454" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.65"/>
+          <rect x="480" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.7"/>
+          <rect x="506" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.65"/>
+          <rect x="532" y="326" width="18" height="14" rx="2" fill="#b8d0f0" opacity="0.6"/>
+          <!-- Speed lines -->
+          <line x1="-30" y1="330" x2="-80" y2="330" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+          <line x1="-30" y1="338" x2="-100" y2="338" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+          <line x1="-30" y1="345" x2="-70" y2="345" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+          <!-- Pantograph (electric collector) -->
+          <line x1="280" y1="310" x2="260" y2="292" stroke="#8a8aa8" stroke-width="1.5"/>
+          <line x1="280" y1="310" x2="300" y2="292" stroke="#8a8aa8" stroke-width="1.5"/>
+          <line x1="260" y1="292" x2="300" y2="292" stroke="#8a8aa8" stroke-width="1"/>
+          <!-- Catenary wire -->
+          <line x1="0" y1="285" x2="560" y2="285" stroke="#4a4a5a" stroke-width="1" stroke-dasharray="40,10"/>
+
+          <!-- Ground glow from train -->
+          <ellipse cx="280" cy="375" rx="250" ry="18" fill="rgba(240,240,248,0.06)"/>
+
+          <!-- Distant city lights -->
+          <rect x="120" y="270" width="2" height="12" fill="#f8e898" opacity="0.4"/>
+          <rect x="136" y="265" width="2" height="18" fill="#f8e898" opacity="0.35"/>
+          <rect x="150" y="272" width="2" height="10" fill="#f8e898" opacity="0.4"/>
+          <rect x="390" y="268" width="2" height="14" fill="#f8e898" opacity="0.35"/>
+          <rect x="404" y="274" width="2" height="8" fill="#f8e898" opacity="0.4"/>
+          <rect x="418" y="266" width="2" height="16" fill="#f8e898" opacity="0.35"/>
+          <rect x="432" y="270" width="2" height="12" fill="#f8e898" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE -->
+  <div class="article-layout">
+    <main class="article-body">
+
+      <!-- TOC -->
+      <nav class="toc" aria-label="Article contents">
+        <div class="toc-title">In this guide</div>
+        <ol>
+          <li><a href="#what-is-it">What the Japan Rail Pass actually is</a></li>
+          <li><a href="#prices">2025 prices: ordinary vs Green Car</a></li>
+          <li><a href="#covered">What's included — and what's not</a></li>
+          <li><a href="#worth-it">Is it worth it? Route-by-route breakdown</a></li>
+          <li><a href="#how-to-buy">How to buy and activate</a></li>
+          <li><a href="#regional">Regional passes: often the smarter choice</a></li>
+          <li><a href="#tips">Tips for getting the most out of it</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+
+      <!-- Intro -->
+      <p class="lead-para" id="what-is-it">The Japan Rail Pass — universally called the JR Pass — is an unlimited travel pass for foreign tourists covering most of Japan's national rail network, including the Shinkansen bullet trains. For the right itinerary, it's genuinely excellent value. For the wrong one, it's a significant overpay.</p>
+
+      <p>That distinction matters more than it used to. In October 2023, JR raised pass prices by nearly 70% — the first increase since 1989. A 7-day Ordinary pass that cost ¥29,650 now costs ¥50,000. The pass is still worth buying for multi-region trips, but the simple Tokyo–Kyoto–Osaka round trip that justified it for millions of travellers no longer does. This guide does the maths so you don't have to.</p>
+
+      <div class="warning-box">
+        <p><strong>Important:</strong> The JR Pass must be purchased before you arrive in Japan, either through the official website or an authorised overseas seller. As of October 2023, it can no longer be purchased at train stations in Japan. You can still buy it inside Japan through select JR Travel Service Centers, but at a significant premium — buy online before you fly.</p>
+      </div>
+
+      <!-- Section 1: Prices -->
+      <h2 id="prices">2025 prices: ordinary vs Green Car</h2>
+
+      <p>The JR Pass comes in two classes and three durations. The Ordinary pass covers standard-class carriages on all included trains. The Green Car pass covers first-class carriages — more space, quieter, and noticeably more comfortable on longer legs.</p>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Pass type</th>
+            <th>Duration</th>
+            <th>Price (¥)</th>
+            <th>Approx. USD</th>
+            <th>Child (6–11)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pass-name">Ordinary</td>
+            <td>7 days</td>
+            <td class="price-jpy">¥50,000</td>
+            <td class="price-usd">~$330</td>
+            <td class="price-usd">¥25,000</td>
+          </tr>
+          <tr>
+            <td class="pass-name">Ordinary</td>
+            <td>14 days</td>
+            <td class="price-jpy">¥80,000</td>
+            <td class="price-usd">~$530</td>
+            <td class="price-usd">¥40,000</td>
+          </tr>
+          <tr>
+            <td class="pass-name">Ordinary</td>
+            <td>21 days</td>
+            <td class="price-jpy">¥100,000</td>
+            <td class="price-usd">~$665</td>
+            <td class="price-usd">¥50,000</td>
+          </tr>
+          <tr>
+            <td class="pass-name">Green Car</td>
+            <td>7 days</td>
+            <td class="price-jpy">¥70,000</td>
+            <td class="price-usd">~$465</td>
+            <td class="price-usd">¥35,000</td>
+          </tr>
+          <tr>
+            <td class="pass-name">Green Car</td>
+            <td>14 days</td>
+            <td class="price-jpy">¥110,000</td>
+            <td class="price-usd">~$730</td>
+            <td class="price-usd">¥55,000</td>
+          </tr>
+          <tr>
+            <td class="pass-name">Green Car</td>
+            <td>21 days</td>
+            <td class="price-jpy">¥140,000</td>
+            <td class="price-usd">~$930</td>
+            <td class="price-usd">¥70,000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>USD prices fluctuate with the yen exchange rate — the yen has been historically weak since 2022, which actually makes the pass cheaper in dollar terms than the yen price suggests. Check the current rate when you buy. Children aged 6–11 pay half price; under 6 travels free.</p>
+
+      <p>The Green Car is only worth it if you're taking several 2+ hour Shinkansen legs and genuinely value the extra space. For most travellers, the Ordinary pass is the right choice.</p>
+
+      <!-- Section 2: Coverage -->
+      <h2 id="covered">What's included — and what's not</h2>
+
+      <p>The JR Pass covers the national JR network: over 19,000km of rail operated by the six JR Group companies. In practice, that means most of the Shinkansen network plus JR local and express trains in every region. What it doesn't cover is just as important to understand.</p>
+
+      <div class="coverage-grid">
+        <div class="coverage-col included">
+          <div class="coverage-col-title">Included ✓</div>
+          <ul class="coverage-list">
+            <li><span class="ci">✓</span>All Shinkansen lines except Nozomi &amp; Mizuho services</li>
+            <li><span class="ci">✓</span>Hikari, Sakura, Kodama, Hayabusa, Komachi, Kagayaki bullet trains</li>
+            <li><span class="ci">✓</span>All JR limited express, express, and local trains nationwide</li>
+            <li><span class="ci">✓</span>Narita Express (N'EX) — Tokyo airport to city centre</li>
+            <li><span class="ci">✓</span>Tokyo Monorail to/from Haneda Airport</li>
+            <li><span class="ci">✓</span>JR ferry to Miyajima (Hiroshima)</li>
+            <li><span class="ci">✓</span>Some JR bus services</li>
+            <li><span class="ci">✓</span>Free seat reservations at any JR office</li>
+          </ul>
+        </div>
+        <div class="coverage-col excluded">
+          <div class="coverage-col-title">Not included ✗</div>
+          <ul class="coverage-list">
+            <li><span class="cx">✗</span>Nozomi &amp; Mizuho Shinkansen (fastest services) — supplement required</li>
+            <li><span class="cx">✗</span>Tokyo Metro &amp; Toei subway lines</li>
+            <li><span class="cx">✗</span>Osaka subway system</li>
+            <li><span class="cx">✗</span>Kyoto city buses and subway</li>
+            <li><span class="cx">✗</span>Private railways (Kintetsu, Hankyu, Keikyu, etc.)</li>
+            <li><span class="cx">✗</span>Hakone Romancecar and ropeway</li>
+            <li><span class="cx">✗</span>Most services to/from Osaka Itami Airport</li>
+            <li><span class="cx">✗</span>Residents of Japan (temporary visitor visa only)</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>The Nozomi and Mizuho exclusion is worth flagging. These are the fastest Shinkansen services — Tokyo to Kyoto on the Nozomi takes 2h13m; the Hikari (which is covered) takes 2h40m. The 27-minute difference rarely matters for sightseeing itineraries. However, if you want to ride the Nozomi, you can now pay a supplement as a JR Pass holder — around ¥4,000–¥6,500 per trip.</p>
+
+      <p>Subways and city buses in Tokyo, Osaka, and Kyoto are <em>not covered</em>. You'll need a Suica or PASMO IC card for those regardless of whether you have a JR Pass — load it with ¥3,000–¥5,000 when you arrive and top up as needed.</p>
+
+      <!-- Section 3: Worth it? -->
+      <h2 id="worth-it">Is it worth it? Route-by-route breakdown</h2>
+
+      <p>Here's the honest maths on the most common Japan itineraries. All individual ticket prices are for Ordinary class, reserved seats on covered Shinkansen services (Hikari/Sakura), which is the relevant comparison for pass holders.</p>
+
+      <h3>Itinerary 1: Tokyo → Kyoto → Osaka → Tokyo (7 days)</h3>
+      <p>The most popular first trip to Japan. Before 2023, this reliably justified the pass. Post-hike, it usually doesn't.</p>
+
+      <table class="route-cost-table">
+        <thead><tr><th style="width:48%">Journey</th><th>Individual ticket</th></tr></thead>
+        <tbody>
+          <tr><td class="route-leg">Tokyo → Kyoto (Hikari)</td><td class="cost-jpy">¥13,850</td></tr>
+          <tr><td class="route-leg">Kyoto → Osaka</td><td class="cost-jpy">¥560</td></tr>
+          <tr><td class="route-leg">Osaka → Tokyo (Hikari)</td><td class="cost-jpy">¥13,850</td></tr>
+          <tr class="total-row"><td>Total individual tickets</td><td>¥28,260</td></tr>
+          <tr><td><strong>7-day JR Pass cost</strong></td><td class="cost-jpy"><strong>¥50,000</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="verdict not-worth-it">
+        <div class="verdict-icon">✗</div>
+        <div>
+          <div class="verdict-label">Verdict</div>
+          <div class="verdict-heading">Don't buy the pass — save ¥21,740</div>
+          <div class="verdict-body">Individual tickets are <strong>¥21,740 cheaper</strong> for this itinerary. The pass would only make sense if you're adding significant side trips — Hiroshima, Kyushu, or Tohoku — within those same 7 days.</div>
+        </div>
+      </div>
+
+      <h3>Itinerary 2: Tokyo → Kyoto → Hiroshima → Osaka → Tokyo (7 days)</h3>
+      <p>Adding Hiroshima — a must-visit — changes the calculation significantly.</p>
+
+      <table class="route-cost-table">
+        <thead><tr><th style="width:48%">Journey</th><th>Individual ticket</th></tr></thead>
+        <tbody>
+          <tr><td class="route-leg">Tokyo → Kyoto (Hikari)</td><td class="cost-jpy">¥13,850</td></tr>
+          <tr><td class="route-leg">Kyoto → Hiroshima (Hikari)</td><td class="cost-jpy">¥10,480</td></tr>
+          <tr><td class="route-leg">Hiroshima → Miyajima (JR Ferry, included)</td><td class="cost-jpy">¥190</td></tr>
+          <tr><td class="route-leg">Hiroshima → Osaka (Hikari)</td><td class="cost-jpy">¥9,720</td></tr>
+          <tr><td class="route-leg">Osaka → Tokyo (Hikari)</td><td class="cost-jpy">¥13,850</td></tr>
+          <tr class="total-row"><td>Total individual tickets</td><td>¥48,090</td></tr>
+          <tr><td><strong>7-day JR Pass cost</strong></td><td class="cost-jpy"><strong>¥50,000</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="verdict maybe">
+        <div class="verdict-icon">~</div>
+        <div>
+          <div class="verdict-label">Verdict</div>
+          <div class="verdict-heading">Marginal — but passes add flexibility</div>
+          <div class="verdict-body">Individual tickets cost <strong>¥1,910 less</strong>, so it's essentially break-even. The pass pays off if you add any day trips — Nara from Kyoto, Himeji from Osaka, or Okayama from Hiroshima — or take the N'EX from Narita. The convenience of not buying individual tickets also has real value.</div>
+        </div>
+      </div>
+
+      <h3>Itinerary 3: Tokyo → Kyoto → Hiroshima → Fukuoka → Tokyo (10–14 days)</h3>
+      <p>Extending into Kyushu is where the 14-day pass becomes compelling.</p>
+
+      <table class="route-cost-table">
+        <thead><tr><th style="width:48%">Journey</th><th>Individual ticket</th></tr></thead>
+        <tbody>
+          <tr><td class="route-leg">Tokyo → Kyoto (Hikari)</td><td class="cost-jpy">¥13,850</td></tr>
+          <tr><td class="route-leg">Kyoto → Hiroshima (Hikari)</td><td class="cost-jpy">¥10,480</td></tr>
+          <tr><td class="route-leg">Hiroshima → Fukuoka/Hakata (Sakura)</td><td class="cost-jpy">¥5,940</td></tr>
+          <tr><td class="route-leg">Fukuoka → Tokyo (Sakura + Hikari)</td><td class="cost-jpy">¥22,950</td></tr>
+          <tr><td class="route-leg">Day trips and regional travel (est.)</td><td class="cost-jpy">¥8,000</td></tr>
+          <tr class="total-row"><td>Total individual tickets</td><td>¥61,220</td></tr>
+          <tr><td><strong>14-day JR Pass cost</strong></td><td class="cost-jpy"><strong>¥80,000</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="verdict worth-it">
+        <div class="verdict-icon">✓</div>
+        <div>
+          <div class="verdict-label">Verdict</div>
+          <div class="verdict-heading">Pass pays off — especially with day trips</div>
+          <div class="verdict-body">Individual tickets come to ~¥61,220 for the core journey. <strong>Add realistic day trips from each city</strong> — Nara, Himeji, Miyajima, Nagasaki — and you'll easily exceed ¥80,000. The 14-day pass is the right call for this itinerary.</div>
+        </div>
+      </div>
+
+      <!-- Section 4: How to buy -->
+      <h2 id="how-to-buy">How to buy and activate your JR Pass</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Buy online before you leave home</div>
+            <p class="step-desc">Purchase from the <strong>official Japan Rail Pass website</strong> (japanrailpass.net) or an authorised overseas seller. Choose your pass type and duration, select your intended activation date (you can change this later within a 30-day window), and pay online. You'll receive an exchange order by email.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Exchange your order at a JR office in Japan</div>
+            <p class="step-desc">On arrival, take your exchange order and your passport to a <strong>JR Travel Service Center</strong> — found at all major airports (Narita, Haneda, Kansai) and large stations. Bring your original passport; a photocopy won't work. The officer will confirm your temporary visitor stamp. Allow 15–30 minutes; it can take longer if the office is busy.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Choose your activation date carefully</div>
+            <p class="step-desc">You don't have to activate the pass the day you exchange it. If you're spending a few days in Tokyo before your Shinkansen travel begins, <strong>delay activation</strong> until your first long-distance trip. A 7-day pass activated in Tokyo 3 days into your trip gives you 7 full days for the travel-intensive part of your itinerary.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-title">Reserve your Shinkansen seats at the same time</div>
+            <p class="step-desc">Seat reservations are <strong>free and unlimited</strong> for JR Pass holders. Do them all at once when you exchange your pass — bring a printed or screenshot itinerary. The officer will book each leg. You can also reserve at JR ticket machines using the pass itself, or at any Green Window (Midori no Madoguchi) counter.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <div class="step-title">Use the dedicated JR Pass gates</div>
+            <p class="step-desc">At Shinkansen ticket gates, don't try to tap through the IC card turnstiles — you'll be blocked. Find the staffed gate (usually on the left or right of the main barriers) and show your pass to the attendant. They'll wave you through. On the train, keep your pass accessible — conductors do occasional checks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="affiliate-box">
+        <div class="affiliate-icon">🎫</div>
+        <div class="affiliate-content">
+          <div class="affiliate-label">Buy your JR Pass</div>
+          <div class="affiliate-title">Official Japan Rail Pass</div>
+          <p class="affiliate-desc">Buy directly from the official site for guaranteed authenticity. Seat reservations are available online only when buying through the official website — a useful advantage over third-party sellers.</p>
+          <a href="https://japanrailpass.net/en/" class="affiliate-btn" target="_blank" rel="noopener sponsored" style="background:var(--forest)">Buy on japanrailpass.net →</a>
+          <span class="affiliate-price">7-day from ¥50,000 · 14-day from ¥80,000</span>
+        </div>
+      </div>
+
+      <!-- Section 5: Regional passes -->
+      <h2 id="regional">Regional passes: often the smarter choice</h2>
+
+      <p>If your itinerary stays within one part of Japan, a regional JR pass will almost always save you money over the national JR Pass. There are over 20 regional options. Here are the most useful for common itineraries:</p>
+
+      <div class="regional-grid">
+        <div class="regional-card">
+          <div class="regional-name">JR Kansai Area Pass</div>
+          <div class="regional-price">From ¥2,400 (1 day) · ¥4,000 (2 days)</div>
+          <div class="regional-desc">Covers Osaka, Kyoto, Nara, Kobe, Himeji, and Wakayama on JR lines. Ideal if you're spending a week in Kansai without going to Tokyo or Hiroshima.</div>
+        </div>
+        <div class="regional-card">
+          <div class="regional-name">JR Kansai Wide Area Pass</div>
+          <div class="regional-price">¥12,000 (5 days)</div>
+          <div class="regional-desc">Extends Kansai pass coverage to include Kinosaki Onsen, Hiroshima via the San'yo line, Okayama, and the Haruka airport express from Kansai Airport. Excellent value for a Kansai-centred trip with a Hiroshima day trip.</div>
+        </div>
+        <div class="regional-card">
+          <div class="regional-name">JR East Pass (Tohoku)</div>
+          <div class="regional-price">¥20,000 (5 days in 14)</div>
+          <div class="regional-desc">Covers all JR East lines north of Tokyo — Tohoku Shinkansen to Sendai, Aomori, and connections to Hokkaido. Ideal for Tokyo + northern Japan itineraries.</div>
+        </div>
+        <div class="regional-card">
+          <div class="regional-name">Hokuriku Arch Pass</div>
+          <div class="regional-price">¥30,000 (7 days)</div>
+          <div class="regional-desc">Connects Tokyo to Osaka via the scenic Hokuriku route through Kanazawa and Fukui — the same cities as the national JR Pass, but cheaper. Best for Tokyo + Kanazawa + Kyoto trips.</div>
+        </div>
+        <div class="regional-card">
+          <div class="regional-name">JR Kyushu Rail Pass</div>
+          <div class="regional-price">¥9,000 (3 days) · ¥14,000 (5 days)</div>
+          <div class="regional-desc">Unlimited JR travel within Kyushu — Fukuoka, Nagasaki, Kagoshima, and beyond. Much better value than the national pass if Kyushu is your sole destination.</div>
+        </div>
+        <div class="regional-card">
+          <div class="regional-name">JR Tokyo Wide Pass</div>
+          <div class="regional-price">¥15,000 (3 days)</div>
+          <div class="regional-desc">Covers day trips from Tokyo in all directions — Nikko, Hakone (JR portion), Kawaguchiko, Nagano, Karuizawa. Good value if you're Tokyo-based and doing multiple day trips.</div>
+        </div>
+      </div>
+
+      <p>The key principle: if your entire trip stays within one JR regional company's network, buy that company's pass. If you're crossing two or more regions on long-distance Shinkansen, run the numbers on the national pass.</p>
+
+      <!-- Section 6: Tips -->
+      <h2 id="tips">Tips for getting the most out of your JR Pass</h2>
+
+      <ul>
+        <li><strong>Use it for the N'EX from Narita.</strong> The Narita Express from the airport to central Tokyo costs ¥3,070 one-way. If you have a JR Pass, this journey is free — one of the easiest ways to extract immediate value. Do this on arrival day even if you're not activating the pass for inter-city travel yet.</li>
+        <li><strong>Reserve every Shinkansen seat in advance.</strong> While unreserved cars exist, the number of unreserved seats has been shrinking on many routes. During peak periods (Golden Week, Obon, New Year), unreserved cars can be standing-room only. Reservations are free — always book them.</li>
+        <li><strong>Don't activate during Golden Week or Obon.</strong> Popular trains book out entirely during Japan's two main holiday periods (late April/early May and mid-August). Your free reservations won't help if no seats are available. Aim to start your travel-intensive week just before or just after these windows.</li>
+        <li><strong>Buy a Suica card at the airport regardless.</strong> The JR Pass doesn't work on subways, city buses, or private railways. A Suica (IC card) handles all of that and works at convenience stores too. Load ¥3,000–¥5,000 on arrival.</li>
+        <li><strong>The Hikari vs Nozomi difference is usually fine.</strong> The Nozomi is 20–30 minutes faster than the Hikari on Tokyo–Kyoto. For sightseeing, that time is irrelevant. Don't pay a supplement just to save half an hour.</li>
+        <li><strong>Day trips are the pass's hidden value.</strong> Once you have a JR Pass, the marginal cost of a day trip is zero. This encourages exploring beyond the main cities — Himeji Castle from Osaka, Hiroshima and Miyajima from Kyoto, Kamakura from Tokyo. These trips would cost ¥2,000–¥5,000 per person without a pass and become free with one.</li>
+      </ul>
+
+      <!-- Section 7: FAQ -->
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <h3>JR Pass vs Japan Rail Pass — is there a difference?</h3>
+      <p>None at all. JR Pass is shorthand for Japan Rail Pass. Both terms refer to the same product. "JR" stands for Japan Railways (the JR Group), the company that operates the network.</p>
+
+      <h3>Can I buy the JR Pass inside Japan?</h3>
+      <p>Technically yes — since 2023 you can buy it at select JR offices inside Japan, but at a roughly 10% premium over the online price. Always buy it before you arrive.</p>
+
+      <h3>What visa do I need to qualify?</h3>
+      <p>You must be entering Japan as a temporary visitor — the standard 90-day tourist visa that most nationalities receive on arrival. Long-stay visas, work visas, and Japanese residency all disqualify you. Your passport will be checked when you exchange your pass.</p>
+
+      <h3>Can I use the JR Pass on the Tokyo Metro?</h3>
+      <p>No. The Tokyo Metro is a private operator, not part of the JR Group. You'll need a Suica or PASMO card for subway travel in Tokyo. The JR Yamanote Line (which circles central Tokyo) is covered, but the subway lines below ground are not.</p>
+
+      <h3>Does the JR Pass cover the bullet train to Hokkaido?</h3>
+      <p>Yes — the Hokkaido Shinkansen from Shin-Aomori to Shin-Hakodate-Hokuto is covered. However, the full journey from Tokyo to Sapporo via Shinkansen takes around 5 hours and requires a change. If Hokkaido is a core part of your itinerary, check whether the JR East–South Hokkaido Pass offers better value.</p>
+
+      <h3>Is the Green Car worth the extra cost?</h3>
+      <p>For most people, no. The Ordinary class on Japan's Shinkansen is already comfortable, clean, and has good legroom. The Green Car offers wider seats, more recline, and quieter carriages — nice for a 4+ hour journey, but hard to justify the ¥20,000–¥40,000 premium over the Ordinary pass.</p>
+
+      <h3>What happens if I lose my JR Pass?</h3>
+      <p>Lost or stolen passes cannot be replaced. Keep a photo of the pass number and your exchange order confirmation — these may help with insurance claims, but JR will not issue a replacement. Treat it like cash.</p>
+
+      <!-- Author -->
+      <div class="author-box">
+        <div class="author-avatar">SK</div>
+        <div>
+          <div class="author-name">Sarah Kendall</div>
+          <div class="author-title">Senior rail writer · traintravel.guide</div>
+          <div class="author-bio">Sarah has ridden over 40,000 miles of train routes across 22 countries. She specialises in Amtrak long-distance routes and Japan Rail. Previously a staff writer at Condé Nast Traveler.</div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="article-sidebar">
+
+      <div class="sidebar-affiliate" style="background: var(--forest);">
+        <div class="sidebar-affiliate-label">Official JR Pass</div>
+        <div class="sidebar-affiliate-name">Japan Rail Pass</div>
+        <div class="sidebar-affiliate-price">7-day ¥50,000 · 14-day ¥80,000 · 21-day ¥100,000</div>
+        <a href="https://japanrailpass.net/en/" class="sidebar-affiliate-btn" style="background:rgba(255,255,255,0.15);" target="_blank" rel="noopener sponsored">Buy on japanrailpass.net →</a>
+        <div class="sidebar-affiliate-note">Must buy before arriving in Japan. We may earn a commission.</div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-head"><div class="sidebar-card-title">Quick facts</div></div>
+        <div class="sidebar-card-body">
+          <div class="fact-row"><span class="fact-label">Durations</span><span class="fact-value">7, 14, or 21 days</span></div>
+          <div class="fact-row"><span class="fact-label">7-day price</span><span class="fact-value">¥50,000 (~$330)</span></div>
+          <div class="fact-row"><span class="fact-label">Classes</span><span class="fact-value">Ordinary / Green Car</span></div>
+          <div class="fact-row"><span class="fact-label">Shinkansen</span><span class="fact-value">All except Nozomi/Mizuho</span></div>
+          <div class="fact-row"><span class="fact-label">Who can buy</span><span class="fact-value">Temporary visitor visa only</span></div>
+          <div class="fact-row"><span class="fact-label">Where to buy</span><span class="fact-value">Online before arriving</span></div>
+          <div class="fact-row"><span class="fact-label">Seat reservations</span><span class="fact-value">Free &amp; unlimited</span></div>
+          <div class="fact-row"><span class="fact-label">City subways</span><span class="fact-value">Not covered — use Suica</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-head"><div class="sidebar-card-title">Related guides</div></div>
+        <div class="sidebar-card-body" style="padding-top:0.5rem">
+          <ul class="related-list">
+            <li><a href="/passes/"><span class="related-tag">Rail passes</span><br>Compare all major rail passes</a></li>
+            <li><a href="/amtrak/california-zephyr.html"><span class="related-tag">Amtrak</span><br>California Zephyr: Complete Guide</a></li>
+            <li><a href="/amtrak/coast-starlight.html"><span class="related-tag">Amtrak</span><br>Coast Starlight: LA to Seattle</a></li>
+            <li><a href="/amtrak/student-discount.html"><span class="related-tag">Amtrak</span><br>Amtrak Student Discount Guide</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- NEXT ARTICLE -->
+  <a href="/amtrak/" class="next-article">
+    <div>
+      <div class="next-label">Next guide</div>
+      <div class="next-title">Amtrak Sleeper Cars: Roomette vs Bedroom — Which Should You Book?</div>
+    </div>
+    <div class="next-arrow">→</div>
+  </a>
+
+  <div id="footer-placeholder"></div>
+  <script src="/js/main.js"></script>
+</body>
+</html>
